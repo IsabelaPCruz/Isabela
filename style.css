@@ -1,11 +1,19 @@
 body {
-    background: #1f0b0b8c;
-  }
+    background: #1f0b0b8c
+    }
 
- p {
-         text-align: center
-  }
+h1 {
+   text-align: center
+}
 
- strong {
-    color: #457040
-    
+   p {
+       text-align: center;
+ }
+
+ #objetivo {
+       font-size: 20px
+ }
+
+  em strong {
+    color:#457040;
+   }
