@@ -1,4 +1,18 @@
 body {
-    color: rgb(235, 235, 235);
-    background-color: orange;
+    color: rgb(0, 0, 0);
+    background-color: rgba(206, 31, 0, 0.767);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+     align-items: center;
+     padding: 16px;
+}  
+
+a {
+    color:rgb(0, 0, 0);
+    text-decoration: none;
 }
