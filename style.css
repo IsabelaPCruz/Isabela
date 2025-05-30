@@ -1,77 +1,468 @@
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
-
-:root {
-  --cor-de-fundo: #1e1e1e;
-  --verde: #6fff57;
-  --branco: #ffffff;
-  --botao-ativo: #3a375e;
-  --botao-inativo: rgba(58, 55, 94, 0.5);
-  --texto-fundo: rgba(58, 55, 94, 0.3);
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--cor-de-fundo);
-  color: var(--branco);
-  font-family: "Chakra Petch", sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte mais moderna e legível para o corpo */
+    line-height: 1.7;
+    color: #333;
+    background-color: #fcfcfc; /* Fundo bem suave */
 }
 
-.conteudo-principal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden; /* Para lidar com floats */
+    padding: 20px 0;
 }
 
-.titulo-principal {
-  text-align: left;
-  width: 100%;
-  font-size: 32px;
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #2E8B57, #6B8E23); /* Gradiente verde-natureza */
+    color: #fff;
+    padding: 1.5rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.titulo-principal span {
-  color: var(--verde);
+.logo {
+    float: left;
+    margin: 0;
+    font-family: 'Merriweather', serif; /* Fonte clássica para o logo */
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
 }
 
-.botao {
-  font-family: "Crakra Petch", sans-serif;
-  background-color: var(--botao-inativo);
-  color: var(--branco);
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  font-size: 18px;
-  align-items: center;
-  width: 100%;
-  border-bottom: 4px solid var(--botao-ativo);
-  border-left: 2px solid var(--botao-ativo);
-  border-right: 2px solid var(--botao-ativo);
-  border-top: none;
+.logo .subtitle {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 300;
+    opacity: 0.8;
 }
 
-.botao:first-child {
-  border-radius: 40px 40px 0 0;
+header nav {
+    float: right;
+    margin-top: 15px;
 }
 
-.botoes {
-  display: block;
+header ul {
+    list-style: none;
 }
 
-.ativo{
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
+header li {
+    display: inline-block;
+    padding: 0 20px;
 }
 
-@media screen and (min-width: 768px){
-  .botoes{
-      display:flex;
-  }
-  .botao:first-child {
-      border-radius: 40px 0 0 0;
-  }
-  .botao:last-child {
-      border-radius: 0 40px 0 0;
-  }
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header a:hover {
+    color: #FFD700; /* Dourado para destaque no hover */
+    transform: scale(1.05);
+}
+
+/* Seções Gerais */
+section {
+    padding: 80px 0;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2E8B57; /* Cor verde para títulos */
+    font-size: 3em;
+    font-family: 'Merriweather', serif;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #FFD700; /* Linha amarela sob o título */
+    border-radius: 2px;
+}
+
+.section-padded {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bg-light {
+    background-color: #f0f8ee; /* Fundo mais claro para alternar seções */
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: #FF8C00; /* Laranja vibrante */
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: #FF4500; /* Laranja mais escuro no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.btn-submit {
+    background: #2E8B57;
+}
+
+.btn-submit:hover {
+    background: #228B22;
+}
+
+/* Seção Hero (Destaque) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x800/6B8E23/ffffff?text=Campo+e+Cidade+Unidos') no-repeat center center/cover; /* Imagem de fundo com overlay */
+    color: #fff;
+    text-align: center;
+    padding: 180px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h2 {
+    color: #fff;
+    font-size: 4.5em;
+    margin-bottom: 25px;
+    font-family: 'Merriweather', serif;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+}
+
+/* Seção Sobre */
+.content-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-columns .text-content {
+    flex: 2; /* Ocupa mais espaço */
+    min-width: 300px;
+}
+
+.content-columns .image-content {
+    flex: 1; /* Ocupa menos espaço */
+    min-width: 250px;
+    text-align: center;
+}
+
+.content-columns img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Cards de Benefícios e Desafios */
+.beneficios-grid, .desafios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card h3 .icon {
+    font-size: 1.2em; /* Tamanho dos ícones emoji */
+}
+
+.card p {
+    font-size: 1.1em;
+}
+
+.card-dark {
+    background: #333;
+    color: #eee;
+}
+
+.card-dark h3 {
+    color: #FFD700;
+}
+
+/* Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Formulário de Contato */
+.contact-intro {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    background: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2E8B57;
+    outline: none;
+    box-shadow: 0 0 10px rgba(46, 139, 87, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #222;
+    color: #ddd;
+    margin-top: 50px;
+    font-size: 0.95em;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    color: #FFD700;
+}
+
+/* Responsividade Aprimorada */
+@media (max-width: 992px) {
+    header h1, header nav {
+        float: none;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    header nav ul {
+        padding-top: 10px;
+        display: flex; /* Para centralizar os links na navegação */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header li {
+        padding: 0 12px;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 {
+        font-size: 3.5em;
+    }
+
+    .hero p {
+        font-size: 1.3em;
+    }
+
+    .content-columns {
+        flex-direction: column; /* Pilha as colunas em telas menores */
+    }
+
+    .content-columns .image-content {
+        order: -1; /* Move a imagem para cima em mobile */
+        margin-bottom: 30px;
+    }
+
+    .beneficios-grid, .desafios-grid, .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta grid para 2 colunas ou 1 */
+        gap: 25px;
+    }
+
+    .card img, .galeria-grid img {
+        height: 180px; /* Ajusta altura das imagens em mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.8em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+    }
+
+    .card h3 {
+        font-size: 1.5em;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2em;
+    }
+
+    header li {
+        padding: 0 8px;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .beneficios-grid, .desafios-grid, .galeria-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    .card, .contact-form {
+        padding: 20px;
+    }
+
+    .card img, .galeria-grid img {
+        height: 150px;
+    }
 }
