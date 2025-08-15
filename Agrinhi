@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festejando a Conexão Campo-Cidade</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Festejando a Conexão Campo-Cidade</h1>
+  </header>
+
+  <main>
+    <section class="dupla">
+      <div class="imagem-container">
+        <img src="images/campo.jpg" alt="Imagem do Campo" />
+        <p>O campo: fonte de alimentos e cultura.</p>
+      </div>
+      <div class="imagem-container">
+        <img src="images/cidade.jpg" alt="Imagem da Cidade" />
+        <p>A cidade: inovação e infraestrutura.</p>
+      </div>
+    </section>
+
+    <section class="texto">
+      <p>
+        Quando campo e cidade se conectam, nasce uma relação de interdependência essencial para o bem-estar coletivo. Celebrar essa conexão é valorizar a agricultura, o transporte, a cultura e o progresso sustentável.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Projeto Agrinho</p>
+  </footer>
+</body>
+</html>
